@@ -1,10 +1,13 @@
 # list_optimalisation
 
 ### Issue: 
-List can not be loaded as there is too many media nodes (images) loaded at the same time.
+The list can not be loaded as there are too many images loaded at the same time.
 
 ### Best Solution:
-Create img node with src ones item is detected in viewport. It's done with single IntersectionObserver instance.
+Creating a list of elements with a pseudo attribute "data-src" and images with empty src. Single IntersectionObserver instance detects images appearing in the viewport and reassigns "data-src" to image "src". 
 
-### Optional:
-Can by done with loaded='lazy' attibute on image and Reac.suspense wrapper. This solution still got images stack in panding state.
+### Best Solution:
+Optionally load 
+
+### Not working:
+Loaded='lazy' attribute on the image and React.suspense wrapper but this solution still got images stacked in a pending state.
